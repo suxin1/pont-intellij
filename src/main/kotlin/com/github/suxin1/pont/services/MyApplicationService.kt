@@ -1,6 +1,6 @@
-package com.github.suxin1.pontintellij.services
+package com.github.suxin1.pont.services
 
-import com.github.suxin1.pontintellij.MyBundle
+import com.github.suxin1.pont.MyBundle
 
 class MyApplicationService {
 

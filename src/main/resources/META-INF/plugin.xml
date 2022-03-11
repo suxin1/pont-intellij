@@ -1,18 +1,26 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.suxin1.pontintellij</id>
-    <name>pont-intellij</name>
+    <id>com.github.suxin1.pont</id>
+    <name>pont</name>
     <vendor>suxin1</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.suxin1.pontintellij.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.suxin1.pontintellij.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.suxin1.pont.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.github.suxin1.pont.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.suxin1.pont.PontStateService" />
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.suxin1.pontintellij.listeners.MyProjectManagerListener"
+        <listener class="com.github.suxin1.pont.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+        <group id="Greeting.TopMenu" text="Greeting" description="this is a plugin to generate a simple notification">
+            <add-to-group group-id="MainMenu" anchor="last" />
+            <action class="com.github.suxin1.pont.MyGreetingAction" text="Trigger Notification" description="Click to display notification" />
+            <action class="com.github.suxin1.pont.DisplayInputDialog" text="InputBox Demo" description="InputBox Demo" />
+        </group>
+    </actions>
 </idea-plugin>

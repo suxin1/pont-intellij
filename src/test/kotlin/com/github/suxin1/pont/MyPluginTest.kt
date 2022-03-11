@@ -1,4 +1,4 @@
-package com.github.suxin1.pontintellij
+package com.github.suxin1.pont
 
 import com.intellij.ide.highlighter.XmlFileType
 import com.intellij.psi.xml.XmlFile
